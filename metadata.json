@@ -1,0 +1,93 @@
+{
+  "valid_types": [
+    "CASH_IN",
+    "CASH_OUT",
+    "DEBIT",
+    "PAYMENT",
+    "TRANSFER"
+  ],
+  "type_risk": {
+    "CASH_IN": "low",
+    "CASH_OUT": "medium",
+    "DEBIT": "low",
+    "PAYMENT": "low",
+    "TRANSFER": "medium"
+  },
+  "amount_stats": {
+    "CASH_IN": {
+      "mean": 168920.24200409636,
+      "std": 126508.25527180193
+    },
+    "CASH_OUT": {
+      "mean": 176273.96434614077,
+      "std": 175329.74448346853
+    },
+    "DEBIT": {
+      "mean": 5483.6653137671365,
+      "std": 13318.535518284736
+    },
+    "PAYMENT": {
+      "mean": 13057.604660187451,
+      "std": 12556.45018571611
+    },
+    "TRANSFER": {
+      "mean": 910647.0096454929,
+      "std": 1879573.5289080406
+    }
+  },
+  "step_max": 743,
+  "amount_max": 1615979.47,
+  "features_num": [
+    "step",
+    "amount",
+    "oldbalanceOrg",
+    "newbalanceOrig",
+    "oldbalanceDest",
+    "newbalanceDest",
+    "balanceDiffOrig",
+    "balanceDiffDest"
+  ],
+  "features_cat": [
+    "type"
+  ],
+  "eval": {
+    "roc_auc": 0.9908,
+    "confusion_matrix": [
+      [
+        93410,
+        4947
+      ],
+      [
+        81,
+        1562
+      ]
+    ],
+    "report": {
+      "Legit": {
+        "precision": 0.999133606443401,
+        "recall": 0.9497036306516059,
+        "f1-score": 0.9737917518035111,
+        "support": 98357.0
+      },
+      "Fraud": {
+        "precision": 0.23997541865109848,
+        "recall": 0.9506999391357274,
+        "f1-score": 0.3832188420019627,
+        "support": 1643.0
+      },
+      "accuracy": 0.94972,
+      "macro avg": {
+        "precision": 0.6195545125472497,
+        "recall": 0.9502017848936666,
+        "f1-score": 0.6785052969027369,
+        "support": 100000.0
+      },
+      "weighted avg": {
+        "precision": 0.9866606374179734,
+        "recall": 0.94972,
+        "f1-score": 0.9640886388954715,
+        "support": 100000.0
+      }
+    }
+  }
+}
